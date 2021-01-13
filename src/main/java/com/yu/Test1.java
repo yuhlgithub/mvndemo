@@ -3,6 +3,7 @@ package com.yu;
 import java.io.*;
 import java.util.*;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class Test1 {
