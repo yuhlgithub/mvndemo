@@ -154,4 +154,14 @@ public class Test1 {
         a = a.substring(0,a.lastIndexOf("!"));
         System.out.println(a);
     }
+
+    @Test
+    public void test04(){
+        List<Object> a = new ArrayList<>();
+        a.add(null);
+        System.out.println(a.size());
+        for (Object o : a){
+            System.out.println(o.toString());
+        }
+    }
 }
