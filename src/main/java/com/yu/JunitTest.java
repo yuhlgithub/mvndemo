@@ -6,7 +6,7 @@ import java.util.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Test1 {
+public class JunitTest {
     public static void main(String[] args) {
         //System.out.println("test");
 
@@ -163,5 +163,10 @@ public class Test1 {
         for (Object o : a){
             System.out.println(o.toString());
         }
+    }
+
+    @Test
+    public void test05(){
+
     }
 }
