@@ -2,6 +2,7 @@ package com.yu;
 
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -167,6 +168,22 @@ public class JunitTest {
 
     @Test
     public void test05(){
+        long l = TimeUnit.MINUTES.toSeconds(10);
+        System.out.println(l);
+    }
 
+    @Test
+    public void test06(){
+        List<Integer> a = new ArrayList();
+        a.add(3);
+        a.add(2);
+        a.add(5);
+        Collections.sort(a, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1.intValue() - o2.intValue();
+            }
+        });
+        System.out.println(a);
     }
 }
