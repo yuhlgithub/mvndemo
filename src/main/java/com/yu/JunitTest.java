@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import jdk.nashorn.internal.runtime.regexp.joni.ast.StringNode;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -185,5 +186,12 @@ public class JunitTest {
             }
         });
         System.out.println(a);
+    }
+
+
+    @Test
+    public void test07(){
+        String s = String.format("%10d",10);
+        System.out.println(s);
     }
 }
