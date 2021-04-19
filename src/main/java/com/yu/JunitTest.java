@@ -1,6 +1,7 @@
 package com.yu;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -193,5 +194,40 @@ public class JunitTest {
     public void test07(){
         String s = String.format("%10d",10);
         System.out.println(s);
+    }
+
+
+    @Test
+    public void test08() throws Exception{
+        String dateStr = "1980-10-10";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date birthDay = sdf.parse(dateStr);
+
+        Calendar cal = Calendar.getInstance();
+        // 当前年份
+        int yearNow = cal.get(Calendar.YEAR);
+        // 当前月份
+        int monthNow = cal.get(Calendar.MONDAY);
+        // 当前日期
+        int dayOfMonthNow = cal.get(Calendar.DAY_OF_MONTH);
+
+        cal.setTime(birthDay);
+        int yearBirth = cal.get(Calendar.YEAR);
+        int monthBirth = cal.get(Calendar.MONDAY);
+        int dayOfMonthBirth = cal.get(Calendar.DAY_OF_MONTH);
+
+        // 计算整数
+        int age = yearNow - yearBirth;
+        if (monthNow <= monthBirth) {
+            if (monthNow == monthBirth) {
+                if (dayOfMonthNow < dayOfMonthBirth) {
+                    age--; // 当前日期在生日之前，年龄减1
+                }
+            } else {
+                age--; // 当前月份在生日之前，年龄减1
+            }
+        }
+        System.out.println(age);
+
     }
 }
