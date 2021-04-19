@@ -4,6 +4,7 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 import jdk.nashorn.internal.runtime.regexp.joni.ast.StringNode;
 import org.junit.Assert;
@@ -229,5 +230,17 @@ public class JunitTest {
         }
         System.out.println(age);
 
+    }
+
+
+    @Test
+    public void test09(){
+        List<Integer> a = Arrays.asList(1,2,3,12);
+        List<Integer> c = Arrays.asList(1,2);
+        List<Integer> b = a.stream().filter(e -> c.contains(e)).collect(Collectors.toList());
+        Iterator<Integer> it = b.iterator();
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
     }
 }
