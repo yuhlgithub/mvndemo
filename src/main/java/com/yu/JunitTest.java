@@ -243,4 +243,16 @@ public class JunitTest {
             System.out.println(it.next());
         }
     }
+
+    @Test
+    public void test10(){
+        int l = (int)TimeUnit.HOURS.toSeconds(24);
+        System.out.println(l);
+        System.out.println(60*24*60);
+
+        String a = "10!2!3";
+        String b = "1";
+        int i = a.indexOf(b);
+        System.out.println(i);
+    }
 }
